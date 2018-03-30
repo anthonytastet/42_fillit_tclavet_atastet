@@ -10,6 +10,7 @@ int	main(int argc, char**  argv)
 {
 	char* y;
 	char c;
+	argc = 1;
 	y = argv [1];
 	c = y [1];	
 	ft_putchar(c);
