@@ -4,4 +4,5 @@ void	ft_ft(int *nbr)
 	
 	a = 42;
 	nbr = &a;
+	ft_putnbr(*nbr);
 }
