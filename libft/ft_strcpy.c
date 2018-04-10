@@ -6,27 +6,22 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 11:40:13 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 11:58:37 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/10 13:12:04 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	strcopy(char *src, char *dst)
+char	*ft_strcpy(char *src, char *dst)
 {
 	int		i;
-	char	*dst;
-	int		j;
+
 	i = 0;
-	j = ft_strcmp();
 	while (src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
-}
-
-int main()
-{
-	
+	dst[i] = '\0';
+	return (dst);
 }
