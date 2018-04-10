@@ -6,14 +6,13 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:55:29 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 11:50:53 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/10 18:47:35 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
 	int		i;
 	char	*cpy;
@@ -21,7 +20,8 @@ char	*ft_strdup(char *str)
 
 	j = 0;
 	i = ft_strlen(str);
-	cpy = (char *)malloc(sizeof(*str) * (i + 1));
+	if ((cpy = (char *)malloc(sizeof(*cpy) * (i + 1))) == NULL)
+		return (NULL);
 	while (str[j])
 	{
 		cpy[j] = str[j];

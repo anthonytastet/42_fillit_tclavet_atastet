@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 13:13:20 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 14:36:53 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/10 19:01:08 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		dst[i] = src[i];
 		i++;
 	}
-	while (src[i] != '\0')
+	while (i < len)
 	{
 		dst[i] = '\0';
 		i++;
