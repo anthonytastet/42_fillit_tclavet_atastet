@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 14:38:17 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/10 13:13:20 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/10 14:36:53 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-size_t		ft_strlen(char *str);
-char		*ft_strdup(char *str);
-int			ft_strcmp(char *s1, char *s2);
-char		*ft_strcpy(char *dst, const char *src);
-char		*ft_strncpy(char *dst, const char *src, size_t len);
+char	*ft_strncpy(char *dst, const char *src, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	if (src == NULL || dst == NULL)
+		return (NULL);
+	while (src[i] != '\0' && i <= len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (src[i] != '\0')
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
+}
