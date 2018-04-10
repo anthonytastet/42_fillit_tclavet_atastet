@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 15:22:23 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/10 15:13:43 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/10 15:35:50 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-size_t		ft_strlen(char *str);
-char		*ft_strdup(char *str);
-int			ft_strcmp(char *s1, char *s2);
-char		*ft_strcpy(char *dst, const char *src);
-char		*ft_strncpy(char *dst, const char *src, size_t len);
-char		*strcat(char *s1, char *s2);
+char	*ft_strncat(char *s1, const char *s2, size_t n)
+{
+	char *ret;
+
+	ret = s1;
+	while (*s1)
+		s1++;
+	ft_strncpy(s1, s2, n);
+	return (ret);
+}
