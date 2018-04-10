@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/10 10:55:29 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 11:50:53 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/10 11:40:13 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/10 11:58:37 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+void	strcopy(char *src, char *dst)
 {
 	int		i;
-	char	*cpy;
+	char	*dst;
 	int		j;
-
-	j = 0;
-	i = ft_strlen(str);
-	cpy = (char *)malloc(sizeof(*str) * (i + 1));
-	while (str[j])
+	i = 0;
+	j = ft_strcmp();
+	while (src[i])
 	{
-		cpy[j] = str[j];
-		j++;
+		dst[i] = src[i];
+		i++;
 	}
-	cpy[j] = '\0';
-	return (cpy);
+}
+
+int main()
+{
+	
 }

@@ -6,10 +6,12 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 11:34:28 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/10 12:01:41 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h> 
 
-int	ft_strlen(char *str);
+int		ft_strlen(char *str);
+char	*ft_strdup(char *str);
