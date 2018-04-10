@@ -6,8 +6,22 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 11:58:50 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 11:59:06 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/10 12:25:58 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lbft.h"
+#include "libft.h"
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	return (i - j);
+}
