@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/17 14:43:53 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/17 15:40:59 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRCS	=	ft_atoi.c	\
 			ft_tolower.c \
 			ft_strstr.c \
 		   	ft_strnstr.c \
-		   	ft_strchr.c 
+		   	ft_strchr.c \
+		   	ft_strrchr.c	
 
 OBJS	=	$(SRCS:.c=.o)
 
