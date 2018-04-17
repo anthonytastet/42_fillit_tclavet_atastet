@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/17 16:30:04 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/17 17:00:03 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 SRCS	=	ft_atoi.c	\
 			ft_strcat.c	\
 			ft_strcmp.c	\
+			ft_strncmp.c \
 			ft_strcpy.c	\
 			ft_strdup.c	\
 			ft_strlen.c	\
