@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/10 16:58:47 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/17 11:16:53 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,15 @@ SRCS	=	ft_atoi.c	\
 			ft_strcpy.c	\
 			ft_strdup.c	\
 			ft_strlen.c	\
-			ft_strncat.c	\
-			ft_strncpy.c
+			ft_strncat.c \
+			ft_strncpy.c \
+			ft_isprint.c \
+			ft_isalpha.c \
+			ft_isascii.c \
+			ft_isdigit.c \
+			ft_isalnum.c \
+			ft_toupper.c \
+			ft_tolower.c \
 
 OBJS	=	$(SRCS:.c=.o)
 

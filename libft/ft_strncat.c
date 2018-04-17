@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/10 15:13:43 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/10 15:35:50 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/17 11:34:49 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/17 11:51:08 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,19 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char *ret;
+	size_t i;
+	size_t j;
 
-	ret = s1;
-	while (*s1)
-		s1++;
-	ft_strncpy(s1, s2, n);
-	return (ret);
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j] && j < n)
+	{
+		s1[i] = s2[j];
+		j++;
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }
