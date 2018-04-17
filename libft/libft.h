@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/17 17:02:49 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/17 17:30:18 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,4 @@ char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
+void		ft_bzero(void *s, size_t n);
