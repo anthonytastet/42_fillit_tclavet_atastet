@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/20 14:40:08 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/20 15:25:08 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,10 @@ SRCS	=	ft_atoi.c	\
 			ft_memccpy.c \
 			ft_strlcat.c \
 			ft_putnbr.c \
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c \
+			ft_memalloc.c \
+			ft_memdel.c \
+			ft_strnew.c
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 14:39:39 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/20 15:24:28 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,6 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
 size_t		ft_strlcat(char *dst, const char *src, size_t len);
 void		ft_putnbr(int n);
 void		ft_putnbr_fd(int n, int fd);
+void		*ft_memalloc(size_t size);
+void		ft_memdel(void **app);
+char		*ft_strnew(size_t size);
