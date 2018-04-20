@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/20 14:13:46 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/20 14:40:08 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRCS	=	ft_atoi.c	\
 			ft_putchar_fd.c \
 			ft_putstr.c \
 			ft_putstr_fd.c \
+			ft_putendl.c \
+			ft_putendl_fd.c \
 			ft_strcat.c	\
 			ft_strcmp.c	\
 			ft_strncmp.c \

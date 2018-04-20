@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 14:14:39 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/20 14:39:39 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void		ft_putchar(char c);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr(const char *s);
 void		ft_putstr_fd(const char *s, int fd);
+void		ft_putendl(const char *str);
+void		ft_putendl_fd(const char *str, int fd);
 char		*ft_strdup(const char *str);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
