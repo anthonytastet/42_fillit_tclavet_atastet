@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 18:52:54 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/17 19:21:21 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/20 09:53:57 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
-	int		i;
+	int				i;
 
 	if (!s1 && !s2 && !n)
 		return (0);
