@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 17:33:25 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 16:25:46 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/20 15:55:32 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/20 16:27:59 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_strclr(char *s)
 {
-	size_t			i;
-	unsigned char	*s2;
+	size_t i;
 
-	i = 0;
-	s2 = (unsigned char *)s;
-	while (i < n)
+	i = 1;
+	if (s == NULL)
+		return ;
+	while (s[i])
 	{
-		s2[i] = 0;
+		s[i] = '\0';
 		i++;
 	}
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_streau.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/17 17:33:25 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 16:25:46 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/20 16:00:21 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/20 16:18:24 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_strequ(const char *str1, const char *str2)
 {
-	size_t			i;
-	unsigned char	*s2;
+	int res;
 
-	i = 0;
-	s2 = (unsigned char *)s;
-	while (i < n)
-	{
-		s2[i] = 0;
-		i++;
-	}
+	if (str1 == NULL || str2 == NULL)
+		return (0);
+	res = ft_strcmp(str1, str2);
+	if (res == 0)
+		return (1);
+	else
+		return (0);
 }
