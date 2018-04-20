@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 17:00:13 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/20 17:09:18 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,4 @@ void		ft_strdel(char **as);
 void		ft_strclr(char	*s);
 int			ft_strequ(const char *str1, const char *str2);
 int			ft_strnequ(const char *str1, const char *str2, size_t n);
+char		*ft_strsub(char const *s, unsigned int start, size_t len);
