@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/10 15:45:49 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 11:08:56 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/20 13:39:34 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/20 14:14:19 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	int res;
-	int i;
-	int sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
-			|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (nb == -2147483648)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	if (nb == 2147483647)
 	{
-		res = res * 10 + (str[i] - '0');
-		i++;
+		ft_putstr_fd("2147483647", fd);
+		return ;
 	}
-	return (res * sign);
+	if (nb > 2147483647 || nb < -2147483648)
+		return ;
+	if (nb < 0)
+	{
+		nb = -nb;
+		ft_putchar_fd('-', fd);
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr_fd(nb % 10, fd);
+		ft_putnbr_fd(nb / 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + '0', fd);
 }

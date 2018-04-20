@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 09:57:57 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/20 14:14:39 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <string.h>
 
 size_t		ft_strlen(const char *str);
+void		ft_putchar(char c);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr(const char *s);
+void		ft_putstr_fd(const char *s, int fd);
 char		*ft_strdup(const char *str);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -41,3 +45,5 @@ void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
 size_t		ft_strlcat(char *dst, const char *src, size_t len);
+void		ft_putnbr(int n);
+void		ft_putnbr_fd(int n, int fd);
