@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 10:26:36 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 13:52:14 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 17:38:39 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char			**ft_strsplit(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	j = 0;
 	nb_str = ft_cnt_str(s, c);
@@ -65,8 +67,7 @@ char			**ft_strsplit(char const *s, char c)
 		nb_str--;
 		while (s[j] == c && s[j] != '\0')
 			j++;
-		tab[i] = ft_strsub(s, j, ft_len_to_c(s + j, c));
-		if (tab[i] == NULL)
+		if ((tab[i] = ft_strsub(s, j, ft_len_to_c(s + j, c))) == NULL)
 			return (NULL);
 		j += ft_len_to_c(s + j, c);
 		i++;
