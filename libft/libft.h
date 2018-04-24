@@ -6,12 +6,14 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 16:36:45 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 17:32:42 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stdlib.h>
+# include <string.h>
 
 size_t		ft_strlen(const char *str);
 void		ft_putchar(char c);
@@ -65,3 +67,5 @@ void		ft_striter(char *s, void(*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmap(char const *s, char(*f)(char));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+#endif

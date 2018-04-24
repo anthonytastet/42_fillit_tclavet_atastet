@@ -6,54 +6,60 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 18:04:14 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 10:24:14 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 17:32:58 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_countspace(const char *s)
+static size_t	ft_trimsize(char *s)
 {
-	int		i;
-	size_t	nb_sp;
+	size_t	i;
+	size_t	spaces;
+	size_t	len;
 
+	len = ft_strlen(s);
 	i = 0;
-	nb_sp = 0;
-	while (s[i])
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			nb_sp++;
 		i++;
 	}
-	printf("nb_sp = %zu\n", nb_sp);
-	return (nb_sp);
+	spaces = i;
+	if (s[i] != '\0')
+	{
+		i = len - 1;
+		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		{
+			i--;
+			spaces++;
+		}
+	}
+	return (len - spaces);
 }
 
-char	*ft_strtrim(const char *s)
+char			*ft_strtrim(char const *s)
 {
-	size_t	len;
-	char	*trim;
+	char	*str;
 	size_t	i;
 	size_t	j;
-	size_t	nb_sp;
+	size_t	trim_size;
 
-	nb_sp = ft_countspace(s);
 	if (s == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
-	len = ft_strlen(s) - nb_sp;
-	if ((trim = malloc(sizeof(*trim) * len)) == NULL)
+	trim_size = ft_trimsize((char *)s);
+	str = (char *)malloc(sizeof(*str) * (trim_size + 1));
+	if (str == NULL)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	while (j < trim_size)
 	{
-		while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i] != '\0')
-			i++;
-		trim[j] = s[i];
+		str[j] = s[i];
 		j++;
 		i++;
 	}
-	trim[j] = '\0';
-	return (trim);
+	str[j] = '\0';
+	return (str);
 }
