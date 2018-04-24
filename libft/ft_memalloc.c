@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 14:45:11 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 15:39:33 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 17:49:02 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	*ft_memalloc(size_t size)
 {
 	void *mem_fr;
 
-	if ((mem_fr = (void *)malloc(sizeof(*mem_fr) * (size + 1))) == NULL)
+	if ((mem_fr = (void *)malloc(sizeof(*mem_fr) * size)) == NULL)
 		return (NULL);
-	ft_bzero(mem_fr, size);
+	ft_memset(mem_fr, 0, size);
 	return (mem_fr);
 }
