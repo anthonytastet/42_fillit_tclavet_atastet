@@ -6,13 +6,13 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 10:26:36 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 13:01:49 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 13:52:14 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		t_cnt_str(const char *s, char c)
+static int		ft_cnt_str(const char *s, char c)
 {
 	int		cnt;
 	int		bi;
