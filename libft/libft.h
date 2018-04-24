@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 16:15:47 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 16:36:45 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,4 @@ char		*ft_itoa(int n);
 void		ft_striter(char *s, void(*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmap(char const *s, char(*f)(char));
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
