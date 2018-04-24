@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 13:53:42 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 15:12:30 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 15:41:37 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@ static int	ft_size(int n)
 
 	size = 1;
 	if (n < 0)
-	{
-		n = n * -1;
 		size++;
-	}
-	while (n > 9)
+	while (n > 9 || n < -9)
 	{
 		n = n / 10;
 		size++;
@@ -37,7 +34,7 @@ char		*ft_itoa(int n)
 	int				len;
 
 	len = ft_size(n);
-	if ((str = (char*)malloc(sizeof(str) * (len + 1))) == NULL)
+	if ((str = (char*)malloc(sizeof(*str) * (len + 1))) == NULL)
 		return (NULL);
 	if (n < 0)
 		tmp = -n;
