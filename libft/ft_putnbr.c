@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 10:49:34 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 15:09:53 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 17:58:12 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,19 @@
 
 void	ft_putnbr(int nb)
 {
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb == 2147483647)
-	{
-		ft_putstr("2147483647");
-		return ;
-	}
-	if (nb > 2147483647 || nb < -2147483648)
-		return ;
-	if (nb < 0)
+	long n;
+
+	n = (long)nb;
+	if (n < 0)
 	{
 		ft_putchar('-');
-		nb = -nb;
+		n = -n;
 	}
-	if (nb >= 10)
+	if (n > 9)
 	{
-		ft_putnbr(nb % 10);
-		ft_putnbr(nb / 10);
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
 	else
-		ft_putchar(nb + '0');
+		ft_putchar(n + '0');
 }
