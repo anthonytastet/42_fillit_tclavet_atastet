@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/20 18:04:14 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/20 18:53:14 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/24 10:24:14 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ size_t	ft_countspace(const char *s)
 	printf("nb_sp = %zu\n", nb_sp);
 	return (nb_sp);
 }
-
 
 char	*ft_strtrim(const char *s)
 {
