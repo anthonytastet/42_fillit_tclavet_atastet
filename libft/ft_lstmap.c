@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/24 18:29:20 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/27 10:39:00 by atastet          ###   ########.fr       */
+/*   Created: 2018/04/27 10:16:37 by atastet           #+#    #+#             */
+/*   Updated: 2018/04/27 10:58:48 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*new;
+	t_list	*map;
+	t_list	*start;
+	t_list	*tmp;
 
-	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	if (content == NULL)
+	tmp = (*f)(lst);
+	if ((map = ft_lstnew(tmp->content, tmp->content_size)) == NULL)
+		return (NULL);
+	start = map;
+	lst = lst->next;
+	while (lst != NULL)
 	{
-		new->content = NULL;
-		new->content_size = 0;
-	}
-	else
-	{
-		if ((new->content = malloc(content_size)) == NULL)
+		tmp = (*f)(lst);
+		if ((map->next = ft_lstnew(tmp->content, tmp->content_size)) == NULL)
 			return (NULL);
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
+		lst = lst->next;
+		map = map->next;
 	}
-	new->next = NULL;
-	return (new);
+	return (start);
 }

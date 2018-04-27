@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/24 19:33:41 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/27 10:40:57 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,10 @@ SRCS	=	ft_atoi.c	\
 			ft_strmapi.c \
 			ft_lstnew.c \
 			ft_lstdelone.c \
-			ft_lstdel.c
+			ft_lstdel.c \
+			ft_lstadd.c \
+			ft_lstiter.c \
+			ft_lstmap.c
 
 OBJS	=	$(SRCS:.c=.o)
 

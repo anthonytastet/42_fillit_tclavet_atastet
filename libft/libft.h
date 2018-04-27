@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/24 19:37:10 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/27 10:43:21 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,8 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **add, t_list *nw);
+void				ft_lstiter(t_list *lst, void(*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
 #endif
