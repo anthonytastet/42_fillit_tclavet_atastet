@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/27 10:40:57 by atastet          ###   ########.fr        #
+#    Updated: 2018/04/27 12:03:08 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,12 @@ SRCS	=	ft_atoi.c	\
 			ft_lstdel.c \
 			ft_lstadd.c \
 			ft_lstiter.c \
-			ft_lstmap.c
+			ft_lstmap.c \
+			ft_isprime.c \
+			ft_factorial.c \
+			ft_strupcase.c \
+			ft_strlowcase.c \
+			ft_power.c
 
 OBJS	=	$(SRCS:.c=.o)
 

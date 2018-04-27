@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 10:56:58 by atastet           #+#    #+#             */
-/*   Updated: 2018/04/27 10:43:21 by atastet          ###   ########.fr       */
+/*   Updated: 2018/04/27 12:01:35 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,10 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **add, t_list *nw);
 void				ft_lstiter(t_list *lst, void(*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					ft_isprime(int nb);
+char				*ft_strupcase(char *str);
+char				*ft_strlowcase(char *str);
+int					ft_factorial(int nb);
+int					ft_power(int nb, int power);
 
 #endif
