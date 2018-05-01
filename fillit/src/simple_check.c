@@ -26,25 +26,20 @@ static	int	check_4x4(char *buf)
 	y = 1;
 	i = 0;
 	test = 0;
-	//VERIFIFER SI IL VERIFIE LE DERNIER TETRIMINOS 
 	while (buf[i])
 	{
 		if (buf[i] == '\n' | buf[i] == '\0')
 		{
-			test++;
 			y = 0;
-			printf("test >> %d\n", test);
 		}
 		while (buf[i] != '\n')
 		{
-				 x++;
-			printf("x = %d\n", x);
+			 x++;
 			i++;
 			if (x > 4)
 				return (-1);
 		}
 		x = 0;
-		printf("y = %d\n\n", y);
 		if (y > 4)
 			return (-1);
 		i++;
@@ -64,7 +59,7 @@ int		simple_check(char *buf)
 	}
 	if((ret = check_4x4(buf)) == -1)
 	{
-		ft_putstr("ERROR : One tetriminos is not in the good format\n");
+		ft_putstr("ERROR : File is not in the good format\n");
 		return (-1);
 	}
 	else
