@@ -9,6 +9,14 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-void	ft_usage(void);
+typedef struct		s_tetrimino
+{
+	char			**tetrimino;
+	char			letter;
+	int			x;
+	int			y;
+	struct	s_tetrimino	*next;
+}	
 
+void			ft_usage(void);	
 #endif
