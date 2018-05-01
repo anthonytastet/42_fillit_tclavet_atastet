@@ -12,11 +12,14 @@
 
 NAME 		= 	fillit
 
-SRC_PATH	=	src
-SRC		=	read_tetriminos.c \
-			main.c
+SRC_PATH	=	src/
+
+SRC		=	main.c \
+			ft_usage.c
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
+
+OBJS 		= 	$(SRC:.c=.o)
 
 LIBFT		=	libft/libft.a
 
@@ -27,13 +30,13 @@ CFLAGS		=	-Wall -Wextra -Werror
 all :	$(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
 
 $(OBJS) : $(LIBFT)
 	$(CC) $(CFLAGS) -c $(SRC_POS) 
 
 $(LIBFT) : 
-	make -C ./libft/
+	make re -C ./libft/
 
 clean : 
 	rm -f $(OBJS)
