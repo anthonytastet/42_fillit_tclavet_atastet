@@ -1,7 +1,42 @@
 #include "../include/fillit.h"
 #include "../libft/libft.h"
 
-int	read_tetriminos()
+static int	get_nb_tetriminos(char *buf)
 {
-	
+	int	nb_tet;
+	int	i;
+
+	i = 0;
+	nb_tet = 0;
+	while (buf[i])
+	{
+		if (buf[i] == '\n' && (buf[i + 1] == '\n' || buf[i + 1] == '\0'))
+			nb_tet++;
+		i++;
+	}
+	return (nb_tet);
+}
+
+char		**read_tetriminos(char *argv)
+{
+	char	buf[BUF_SIZE + 1];
+	//char	**tab_tet;
+	int	ret;
+	int	fd;
+	int	nb_tet;
+
+	ret = 1;
+	if ((fd = open(argv, O_RDONLY)) == -1)
+		ft_putstr("open() failed\n");
+	while((ret = read(fd, buf, BUF_SIZE)) != 0)
+		buf[ret] = '\0';
+	//DELETE PUTSTR
+	ft_putstr(buf);
+	if ((simple_check(buf)) == -1)
+		return (NULL);
+	nb_tet = get_nb_tetriminos(buf);
+
+	//if ((tab_tet = (char**)malloc(sizeof(*char) * nb_tet + 1))==NULL)
+	//	return (NULL);
+	return (NULL);	
 }

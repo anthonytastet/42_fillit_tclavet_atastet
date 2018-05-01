@@ -8,6 +8,8 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# define BUF_SIZE 4096
+# include <stdio.h>
 
 typedef struct		s_tetrimino
 {
@@ -16,7 +18,9 @@ typedef struct		s_tetrimino
 	int			x;
 	int			y;
 	struct	s_tetrimino	*next;
-}	
+}			t_tetrimino;
 
-void			ft_usage(void);	
+void			ft_usage(void);
+char			**read_tetriminos(char *argv);
+int			simple_check(char *buf);
 #endif

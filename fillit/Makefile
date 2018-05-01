@@ -15,7 +15,9 @@ NAME 		= 	fillit
 SRC_PATH	=	src/
 
 SRC		=	main.c \
-			ft_usage.c
+			ft_usage.c \
+			read_tetriminos.c \
+			simple_check.c
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 
