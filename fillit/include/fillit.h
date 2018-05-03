@@ -23,4 +23,6 @@ typedef struct		s_tetrimino
 void			ft_usage(void);
 char			**read_tetriminos(char *argv);
 int			simple_check(char *buf);
+int			second_check(char **tab_tet, int nb_tet);
+
 #endif

@@ -65,5 +65,7 @@ char		**read_tetriminos(char *argv)
 	if ((tab_tet = (char**)malloc(sizeof(char*) * (nb_tet + 1)))==NULL)
 		return (NULL);
 	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
-	return (NULL);	
+	if ((second_check(tab_tet, nb_tet)) == -1)
+		return (NULL);
+	return (tab_tet);	
 }
