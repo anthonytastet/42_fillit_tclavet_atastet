@@ -30,21 +30,25 @@ static	int	check_4x4(char *buf)
 	{
 		if (buf[i] == '\n' | buf[i] == '\0')
 		{
+			if (y != 5)
+				return (-1);
 			y = 0;
 		}
 		while (buf[i] != '\n')
 		{
-			 x++;
+			x++;
 			i++;
 			if (x > 4)
 				return (-1);
 		}
-		x = 0;
-		if (y > 4)
+		if (x != 4 && x != 0)
 			return (-1);
+		x = 0;
 		i++;
 		y++;
 	}
+		if (y != 5)
+			return (-1);
 	return (0);
 }
 

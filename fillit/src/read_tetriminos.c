@@ -1,7 +1,7 @@
 #include "../include/fillit.h"
 #include "../libft/libft.h"
 
-static char		**str_to_tab(char *buf, char **tab_tet)
+static char		**str_to_tab(char *buf, char **tab_tet, int nb_tet)
 {
 	int	i;
 	int	x;
@@ -10,17 +10,19 @@ static char		**str_to_tab(char *buf, char **tab_tet)
 	i = 0;
 	y = 0;
 	x = 0;
-	while (buf[i])
+	while (y < nb_tet)
 	{
-		if ((tab_tet[y] = (char*)malloc(sizeof(char) * 21)) ==  NULL)
+		if ((tab_tet[y] = (char*)malloc(sizeof(char) * (20 + 1))) ==  NULL)
 			return (NULL);
-		tab_tet[y][x] = buf[i];
-		if (buf[i] == '\n' && (buf[i + 1] == '\n' || buf[i + 1] == '\0'))
+		while (x < 20)
 		{
-			tab_tet[y][x + 1] = '\0';
-			y++;
-			x = 0;
+			tab_tet[y][x] = buf[i];
+			i++;
+			x++;
 		}
+		tab_tet[y][20] = '\0';
+		x = 0;
+		y++;
 		i++;
 	}
 	tab_tet[y] = NULL;
@@ -49,8 +51,6 @@ char		**read_tetriminos(char *argv)
 	int	ret;
 	int	fd;
 	int	nb_tet;
-//delete x et y
-	int y;
 
 	ret = 1;
 	if ((fd = open(argv, O_RDONLY)) == -1)
@@ -64,13 +64,6 @@ char		**read_tetriminos(char *argv)
 	nb_tet = get_nb_tetriminos(buf);
 	if ((tab_tet = (char**)malloc(sizeof(char*) * (nb_tet + 1)))==NULL)
 		return (NULL);
-	tab_tet = str_to_tab(buf, tab_tet);
-	//print this shit + delete it 
-	y  = 0;
-	while (tab_tet[y])
-	{
-		printf("Tetriminos %d %s", y, tab_tet[y]);
-		y++;
-	}
+	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
 	return (NULL);	
 }
