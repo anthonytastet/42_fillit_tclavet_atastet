@@ -1,6 +1,27 @@
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
+static	int	check_onepiece(char *tab_tet)
+{
+	int	i;
+	int	test;
+
+	i = 0;
+	test = 0;
+	while (tab_tet[i])
+	{
+		if (tab_tet[i] == '#')
+		{
+			if (tab_tet[i - 1] == '#' || tab_tet[i + 1] == '#' || tab_tet[i - 5] == '#' || tab_tet[i + 5] == '#')
+				test++;
+		}
+		i++;
+	}
+	if (test == 4)
+		return (0);
+	else
+		return (-1);
+}
 static int	check_char(char *tab_tet)
 {
 	int	i;
@@ -38,11 +59,17 @@ int		second_check(char **tab_tet, int nb_tet)
 		error = check_char(tab_tet[j]);
 		if (error == -1)
 		{
-			ft_putstr("One of the tetrimino provided does not respect rules ex : 4#\n");
+			ft_putstr("ERROR :One of the tetrimino provided does not respect rules ex : 4#\n");
+			return (-1);
+		}
+		error = check_onepiece(tab_tet[j]);
+		if (error == -1)
+		{
+			ft_putstr("ERROR : One of the teriminos is not made of onepiece\n");
 			return (-1);
 		}
 		nb_tet--;
 		j++;
 	}
 	return (0);
-}	
+}

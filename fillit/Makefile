@@ -18,7 +18,7 @@ SRC		=	main.c \
 			ft_usage.c \
 			read_tetriminos.c \
 			simple_check.c \
-			second_check.c
+			second_check.c \
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 
