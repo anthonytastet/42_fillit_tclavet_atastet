@@ -13,15 +13,17 @@
 
 typedef struct		s_tetrimino
 {
-	char			**tetrimino;
-	char			letter;
-	int			x;
-	int			y;
+	char				**tetrimino;
+	char				letter;
+	int					x;
+	int					y;
 	struct	s_tetrimino	*next;
-}			t_tetrimino;
+}					t_tetrimino;
 
 void			ft_usage(void);
 char			**read_tetriminos(char *argv);
-int			simple_check(char *buf);
-int			second_check(char **tab_tet, int nb_tet);
+int				simple_check(char *buf);
+int				second_check(char **tab_tet, int nb_tet);
+t_tetrimino		*make_lst_tetriminos(char **tab_tet);
+
 #endif

@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/04/27 12:03:08 by atastet          ###   ########.fr        #
+#    Updated: 2018/05/04 21:25:09 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC		=	main.c \
 			read_tetriminos.c \
 			simple_check.c \
 			second_check.c \
+			make_lst_tetriminos.c
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 
