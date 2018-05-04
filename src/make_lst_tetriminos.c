@@ -18,6 +18,7 @@ static t_tetrimino	*new_lst(void)
 	return;
 }
 */
+
 t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 {
 	t_tetrimino	*lst_start;
