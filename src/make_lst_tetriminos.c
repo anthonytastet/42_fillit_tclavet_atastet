@@ -11,6 +11,13 @@ static t_tetrimino	*new_lst(void)
 	return (lst);
 }
 
+/*void	test(char **tab_tet)
+{
+	*tab_tet = NULL;
+	printf("TEST");
+	return;
+}
+*/
 t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 {
 	t_tetrimino	*lst_start;
@@ -26,6 +33,7 @@ t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 	j = 0;
 	l = 0;
 	A = 65;
+	printf("Hello1");
 	if ((lst = (t_tetrimino*)malloc(sizeof(t_tetrimino))) == NULL)
 		return (NULL);
 	lst_start = lst;
@@ -35,10 +43,12 @@ t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 			return NULL;
 		lst->letter = A;
 		A++;
+		printf("Hello2");
 		while (tab_tet[k][l])
 		{
 			if	((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
 				return NULL;
+			printf("Hello3");
 			if (tab_tet[k][l] == '\n')
 			{	
 				lst->tetrimino[i][j] = '\0';

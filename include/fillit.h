@@ -25,5 +25,6 @@ char			**read_tetriminos(char *argv);
 int				simple_check(char *buf);
 int				second_check(char **tab_tet, int nb_tet);
 t_tetrimino		*make_lst_tetriminos(char **tab_tet);
+void			test(char **tab_tet);
 
 #endif

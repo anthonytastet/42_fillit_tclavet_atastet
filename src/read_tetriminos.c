@@ -64,6 +64,7 @@ char		**read_tetriminos(char *argv)
 	nb_tet = get_nb_tetriminos(buf);
 	if ((tab_tet = (char**)malloc(sizeof(char*) * (nb_tet + 1)))==NULL)
 		return (NULL);
+	//malloc pete un cable;
 	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
 	if ((second_check(tab_tet, nb_tet)) == -1)
 		return (NULL);
