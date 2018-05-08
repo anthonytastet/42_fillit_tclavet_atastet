@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:40 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 14:46:38 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/08 18:08:01 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,26 @@ static t_tetrimino	*new_lst(void)
 	if ((lst = (t_tetrimino*)malloc(sizeof(t_tetrimino))) == NULL)
 		return (NULL);	
 	return (lst);
+}
+
+static void			fill_xy(t_tetrimino *lst)
+{
+	int			i;
+	int			j;
+
+	i = 0;
+	j = 0;
+	while (lst->tetrimino[i][j] == '.')
+	{
+		j++;
+		if ( j == 4)
+		{
+			j = 0;
+			i++;
+		}
+	}
+	lst->x = j;
+	lst->y = i;
 }
 
 t_tetrimino	*make_lst_tetriminos(char **tab_tet)
@@ -69,6 +89,7 @@ t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 		j = 0;
 		l = 0;
 		i = 0;
+		fill_xy(lst);
 		lst->next = new_lst();
 		lst = lst->next;
 	}		

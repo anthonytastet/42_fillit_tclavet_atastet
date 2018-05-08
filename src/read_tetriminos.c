@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:42 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 14:48:21 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/08 15:17:25 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,5 @@ char		**read_tetriminos(char *argv)
 	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
 	if ((second_check(tab_tet, nb_tet)) == -1)
 		return (NULL);
-	return (tab_tet);	
+	return (tab_tet);
 }

@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:39:05 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 12:30:22 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/08 18:09:00 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char			**read_tetriminos(char *argv);
 int				simple_check(char *buf);
 int				second_check(char **tab_tet, int nb_tet);
 t_tetrimino		*make_lst_tetriminos(char **tab_tet);
+char			**make_grid(t_tetrimino *lst, int size_grid);
 
 #endif
