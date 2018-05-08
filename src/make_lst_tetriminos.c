@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:40 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 13:06:02 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/08 14:46:38 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,33 +46,31 @@ t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 		if	((lst->tetrimino = (char**)malloc(sizeof(char*) * 5)) == NULL)
 			return NULL;
 		lst->letter = A;
-		A++;
 		if	((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
 			return NULL;
 		while (tab_tet[k][l])
 		{
-			dprintf(1, "k = %d, l = %d, i = %d, j = %d \n", k, l, i, j);
-			dprintf(1, "k = %d l = %d tab = %c\n",k, l, tab_tet[k][l]);
 			if (tab_tet[k][l] == '\n')
 			{	
-				dprintf(1, "avant\n");
-				if	((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
-					return NULL;
 				lst->tetrimino[i][j] = '\0';
-				dprintf(1, "apres\n");
 				j = 0;
 				i++;
 				l++;
-				dprintf(1, "encore apres\n");
+				if	((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
+					return NULL;
 			}
 			lst->tetrimino[i][j] = tab_tet[k][l];
-			dprintf(1, "======>i = %d j = %d tab = %c\n",i, j, lst->tetrimino[i][j]);
 			l++;
 			j++;
 		}
 		lst->tetrimino[i] = NULL;
+		A++;
 		k++;
+		j = 0;
+		l = 0;
+		i = 0;
 		lst->next = new_lst();
+		lst = lst->next;
 	}		
 	lst->next = NULL;
 	return	(lst_start);

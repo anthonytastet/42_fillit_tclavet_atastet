@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:42 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 12:27:58 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/08 14:48:21 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ char		**read_tetriminos(char *argv)
 		ft_putstr("open() failed\n");
 	while((ret = read(fd, buf, BUF_SIZE)) != 0)
 		buf[ret] = '\0';
-	//DELETE PUTSTR
-	ft_putstr(buf);
 	if ((simple_check(buf)) == -1)
 		return (NULL);
 	nb_tet = get_nb_tetriminos(buf);
@@ -80,10 +78,5 @@ char		**read_tetriminos(char *argv)
 	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
 	if ((second_check(tab_tet, nb_tet)) == -1)
 		return (NULL);
-	dprintf(1,"tab_tet[0]%s\n", tab_tet[0]);
-	dprintf(1,"tab_tet[1]%s\n", tab_tet[1]);
-	dprintf(1,"tab_tet[2]%s\n", tab_tet[2]);
-	dprintf(1,"tab_tet[3]%s\n", tab_tet[3]);
-	dprintf(1, "tab_tet[4]%s\n", tab_tet[4]);
 	return (tab_tet);	
 }
