@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_tetriminos.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/08 10:37:42 by atastet           #+#    #+#             */
+/*   Updated: 2018/05/08 12:27:58 by atastet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/fillit.h"
 #include "../libft/libft.h"
 
@@ -28,6 +40,7 @@ static char		**str_to_tab(char *buf, char **tab_tet, int nb_tet)
 	tab_tet[y] = NULL;
 	return (tab_tet);
 }
+
 static int	get_nb_tetriminos(char *buf)
 {
 	int	nb_tet;
@@ -64,9 +77,13 @@ char		**read_tetriminos(char *argv)
 	nb_tet = get_nb_tetriminos(buf);
 	if ((tab_tet = (char**)malloc(sizeof(char*) * (nb_tet + 1)))==NULL)
 		return (NULL);
-	//malloc pete un cable;
 	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
 	if ((second_check(tab_tet, nb_tet)) == -1)
 		return (NULL);
+	dprintf(1,"tab_tet[0]%s\n", tab_tet[0]);
+	dprintf(1,"tab_tet[1]%s\n", tab_tet[1]);
+	dprintf(1,"tab_tet[2]%s\n", tab_tet[2]);
+	dprintf(1,"tab_tet[3]%s\n", tab_tet[3]);
+	dprintf(1, "tab_tet[4]%s\n", tab_tet[4]);
 	return (tab_tet);	
 }

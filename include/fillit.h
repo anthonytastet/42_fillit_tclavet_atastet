@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/08 10:39:05 by atastet           #+#    #+#             */
+/*   Updated: 2018/05/08 12:30:22 by atastet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FILLIT_H
 # define FILLIT_H
 
@@ -25,6 +37,5 @@ char			**read_tetriminos(char *argv);
 int				simple_check(char *buf);
 int				second_check(char **tab_tet, int nb_tet);
 t_tetrimino		*make_lst_tetriminos(char **tab_tet);
-void			test(char **tab_tet);
 
 #endif
