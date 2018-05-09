@@ -38,5 +38,6 @@ int				simple_check(char *buf);
 int				second_check(char **tab_tet, int nb_tet);
 t_tetrimino		*make_lst_tetriminos(char **tab_tet);
 char			**make_grid(t_tetrimino *lst, int size_grid);
+t_tetrimino		*arrange_tet(t_tetrimino *lst);
 
 #endif

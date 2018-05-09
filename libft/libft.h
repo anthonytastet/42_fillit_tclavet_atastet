@@ -84,6 +84,7 @@ int				ft_isprime(int nb);
 int				ft_factorial(int nb);
 char			*ft_strupcase(char *str);
 char			*ft_strlowcase(char *str);
+void			ft_puttab(char **tab);
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));

@@ -37,45 +37,42 @@ static char	**fill_grid_point(char **grid, int size_grid)
 	return (grid);
 }
 
-/*static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
-  {
-  int		i;
-  int		j;
-  int		k;
-  int		l;
 
-  i = 0;
-  j = 0;
-  k = 0;
-  l = 0;
-  while (grid[i][j] != '.' )
-  {
-  j++;
-  if (j == size_grid - 1)
-  {
-  j = 0;
-  i++;
-  }
-  if (grid[i] == NULL)
-  return (0);
-  dprintf(1, ">>Hello i = %d, j = %d\n", i, j);
-  }
-  dprintf(1, "i = %d , j = %d\n", i, j);
-//delete 
-lst = NULL;
-return (0);
+/*static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
+{
+	int		i;
+	int		j;
+	int		k;
+	int		l;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	l = 0;
+	while (grid[i][j] != '.' )
+	{
+		j++;
+		if (j == size_grid - 1)
+		{
+			j = 0;
+			i++;
+		}
+		if (grid[i] == NULL)
+			return (0);
+	}
+	dprintf(1, "i = %d , j = %d\n", i, j);
+	return (0);	
 }*/
 
 char		**make_grid(t_tetrimino *lst, int size_grid)
 {
 	char	**grid;
-
-	//DELETE 
-	lst = NULL;
+	
 	if ((grid = (char**)malloc(sizeof(char*) * size_grid)) == NULL)
 		return (NULL);
+	lst = arrange_tet(lst);
 	grid = fill_grid_point(grid, size_grid);
 	//if (solve_grid(grid, lst, size_grid) == 0)
-	//	make_grid(lst, size_grid + 1);
+	//make_grid(lst, size_grid + 1);
 	return (grid);
 }

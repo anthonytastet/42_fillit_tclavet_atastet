@@ -20,7 +20,8 @@ SRC		=	main.c \
 			simple_check.c \
 			second_check.c \
 			make_lst_tetriminos.c \
-			make_grid.c
+			make_grid.c \
+			arrange_tet.c
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 

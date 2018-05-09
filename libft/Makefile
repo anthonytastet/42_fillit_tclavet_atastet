@@ -74,7 +74,8 @@ SRCS	=	ft_atoi.c	\
 			ft_factorial.c \
 			ft_strupcase.c \
 			ft_strlowcase.c \
-			ft_power.c
+			ft_power.c \
+			ft_puttab.c
 
 OBJS	=	$(SRCS:.c=.o)
 
