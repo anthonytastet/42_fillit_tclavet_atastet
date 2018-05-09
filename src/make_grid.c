@@ -22,6 +22,8 @@ static char	**fill_grid_point(char **grid, int size_grid)
 	i = 0;
 	while (i < size_grid - 1)
 	{
+		if ((grid[i] = (char*)malloc(sizeof(char) * size_grid)) == NULL)
+			return (NULL);
 		while (j < size_grid - 1)
 		{
 			grid[i][j] = '.';
@@ -35,31 +37,34 @@ static char	**fill_grid_point(char **grid, int size_grid)
 	return (grid);
 }
 
-static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
-{
-	int		i;
-	int		j;
-	int		k;
-	int		l;
+/*static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
+  {
+  int		i;
+  int		j;
+  int		k;
+  int		l;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	l = 0;
-	while (grid[i][j] == '.')
-	{
-		j++;
-		if (j == size_grid - 1)
-		{
-			j = 0;
-			i++;
-		}
-		if (grid[i] == NULL)
-			return (0);
-	}
-	lst = NULL;
-	return (0);
-}
+  i = 0;
+  j = 0;
+  k = 0;
+  l = 0;
+  while (grid[i][j] != '.' )
+  {
+  j++;
+  if (j == size_grid - 1)
+  {
+  j = 0;
+  i++;
+  }
+  if (grid[i] == NULL)
+  return (0);
+  dprintf(1, ">>Hello i = %d, j = %d\n", i, j);
+  }
+  dprintf(1, "i = %d , j = %d\n", i, j);
+//delete 
+lst = NULL;
+return (0);
+}*/
 
 char		**make_grid(t_tetrimino *lst, int size_grid)
 {
@@ -68,8 +73,6 @@ char		**make_grid(t_tetrimino *lst, int size_grid)
 	//DELETE 
 	lst = NULL;
 	if ((grid = (char**)malloc(sizeof(char*) * size_grid)) == NULL)
-		return (NULL);
-	if ((*grid = (char*)malloc(sizeof(char) * size_grid)) == NULL)
 		return (NULL);
 	grid = fill_grid_point(grid, size_grid);
 	//if (solve_grid(grid, lst, size_grid) == 0)

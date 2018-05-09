@@ -48,10 +48,10 @@ int	main(int argc, char **argv)
 		lst = lst->next;
 	}
 	grid = make_grid(lst, 5);
-	dprintf(1,"grid 0 %s\n" ,lst->tetrimino[0]);
-	dprintf(1,"grid 1 %s\n" ,lst->tetrimino[1]);
-	dprintf(1,"grid 2 %s\n" ,lst->tetrimino[2]);
-	dprintf(1,"grid 3 %s\n" ,lst->tetrimino[3]);
-	dprintf(1,"grid 4 %s\n" ,lst->tetrimino[4]);
+	dprintf(1,"grid 0 %s\n" ,grid[0]);
+	dprintf(1,"grid 1 %s\n" ,grid[1]);
+	dprintf(1,"grid 2 %s\n" ,grid[2]);
+	dprintf(1,"grid 3 %s\n" ,grid[3]);
+	dprintf(1,"grid 4 %s\n" ,grid[4]);
 	return (0);
 }
