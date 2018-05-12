@@ -43,6 +43,44 @@ static void			fill_xy(t_tetrimino *lst)
 	lst->y = i;
 }
 
+int			get_width(char **tet)
+{
+	int			width;
+
+	width = 2;
+	if (tet[0][0] == '#' && tet[1][2] == '#')
+		return (3);
+	if (tet[0][3] == '#')
+		return (4);
+	if (tet[0][2] == '#' && tet[1][0] == '#')
+		return(3);
+	return (width);
+}
+
+int			get_height(char **tet)
+{
+	int			i;
+	int			j;
+	int			count;
+
+	count = 0;
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (tet[i][j] == '#')
+				count++;
+			if (count == 4)
+				return (i + 1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 {
 	t_tetrimino	*lst_start;
@@ -76,7 +114,7 @@ t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 				j = 0;
 				i++;
 				l++;
-				if	((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
+				if ((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
 					return NULL;
 			}
 			lst->tetrimino[i][j] = tab_tet[k][l];

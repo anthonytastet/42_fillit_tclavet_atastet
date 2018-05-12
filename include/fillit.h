@@ -29,6 +29,8 @@ typedef struct		s_tetrimino
 	char				letter;
 	int					x;
 	int					y;
+	int					width;
+	int					height;
 	struct	s_tetrimino	*next;
 }					t_tetrimino;
 
@@ -39,5 +41,7 @@ int				second_check(char **tab_tet, int nb_tet);
 t_tetrimino		*make_lst_tetriminos(char **tab_tet);
 char			**make_grid(t_tetrimino *lst, int size_grid);
 t_tetrimino		*arrange_tet(t_tetrimino *lst);
+int				get_width(char **tet);
+int				get_height(char **tet);
 
 #endif

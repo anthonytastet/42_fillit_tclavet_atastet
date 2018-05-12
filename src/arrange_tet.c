@@ -46,7 +46,7 @@ static char		**go_left(int j_min, char **tab)
 			j++;
 		}
 		tmp = j_min;
-		while (tmp > 0 && tmp > 0)
+		while (tmp > 0)
 		{
 			tab[i][4 - tmp] = '.';
 			tmp--;
@@ -72,6 +72,8 @@ t_tetrimino		*arrange_tet(t_tetrimino *lst)
 		lst->tetrimino = go_up(lst->y, lst->tetrimino);
 		lst->y = 0;
 		lst->x = 0;
+		lst->width = get_width(lst->tetrimino);
+		lst->height = get_height(lst->tetrimino);
 		lst = lst->next;
 	}
 	return (start);

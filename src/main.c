@@ -57,6 +57,8 @@ int	main(int argc, char **argv)
 		dprintf(1, "lst->x %d\n", lst->x);
 		dprintf(1, "lst->y %d\n", lst->y);
 		dprintf(1, "lst->letter %c\n", lst->letter);
+		dprintf(1, "lst->width %d\n", lst->width);
+		dprintf(1, "lst->height %d\n", lst->height);
 		dprintf(1,"lst 0 %s\n" ,lst->tetrimino[0]);
 		dprintf(1,"lst 1 %s\n" ,lst->tetrimino[1]);
 		dprintf(1,"lst 2 %s\n" ,lst->tetrimino[2]);

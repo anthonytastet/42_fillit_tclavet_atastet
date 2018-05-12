@@ -13,6 +13,10 @@
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
+/*
+ * Fill the grid with points
+*/
+
 static char	**fill_grid_point(char **grid, int size_grid)
 {
 	int		i;
@@ -37,8 +41,56 @@ static char	**fill_grid_point(char **grid, int size_grid)
 	return (grid);
 }
 
+/*
+ * Writes a tetrimino on a place (x, y) with the good letter associated
+*/
 
-/*static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
+static void	write_tet(t_tetrimino *lst, char **grid, int x, int y)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < lst->height)
+	{
+		j = 0;
+		while (j < lst->width)
+		{
+			if (lst->tetrimino[i][j] == '#')
+				grid[y + i][x + j] = lst->letter;
+			j++;
+		}
+		i++;
+	}
+}
+
+/*
+ * Test if a Tetrimino can be placed on the map at a set place (x, y)
+ * Writes it on the place if it is possible
+*/
+
+static int	set_tet(t_tetrimino *lst, char **grid, int x, int y)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < lst->height)
+	{
+		j = 0;
+		while (j < lst->width)
+		{
+			if (lst->tetrimino[i][j] == '#' && grid[y + i][x + j] != '.')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	write_tet(lst, grid, x, y);
+	return (1);
+}
+
+static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 {
 	int		i;
 	int		j;
@@ -46,23 +98,26 @@ static char	**fill_grid_point(char **grid, int size_grid)
 	int		l;
 
 	i = 0;
-	j = 0;
 	k = 0;
 	l = 0;
-	while (grid[i][j] != '.' )
+	if (lst == NULL)
+		return (1);
+	while (i < size_grid)
 	{
-		j++;
-		if (j == size_grid - 1)
+		j = 0;
+		while (j < size_grid)
 		{
-			j = 0;
-			i++;
+			if (set_tet(lst, grid, j, i) == 1)
+			{
+				if (solve_grid(grid, lst->next, size_grid) == 1)
+					return (1);
+			}
+			j++;
 		}
-		if (grid[i] == NULL)
-			return (0);
+		i++;
 	}
-	dprintf(1, "i = %d , j = %d\n", i, j);
-	return (0);	
-}*/
+	return (0);
+}
 
 char		**make_grid(t_tetrimino *lst, int size_grid)
 {
@@ -72,7 +127,7 @@ char		**make_grid(t_tetrimino *lst, int size_grid)
 		return (NULL);
 	lst = arrange_tet(lst);
 	grid = fill_grid_point(grid, size_grid);
-	//if (solve_grid(grid, lst, size_grid) == 0)
-	//make_grid(lst, size_grid + 1);
+	if (solve_grid(grid, lst, size_grid) == 0)
+		make_grid(lst, size_grid + 1);
 	return (grid);
 }
