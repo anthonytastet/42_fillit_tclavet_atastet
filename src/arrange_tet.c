@@ -37,9 +37,9 @@ static char		**go_left(int j_min, char **tab)
 
 	tmp = 0;
 	i = 0;
-	j = 0;
 	while (i < 4)
 	{
+		j = 0;
 		while (tab[i][j + j_min] != '\0')
 		{
 			tab[i][j] = tab[i][j + j_min];
@@ -51,8 +51,42 @@ static char		**go_left(int j_min, char **tab)
 			tab[i][4 - tmp] = '.';
 			tmp--;
 		}
-		j = 0;
 		i++;
+	}
+	return (tab);
+}
+
+/*
+ * Weird way of getting the good tetrimino back, not ideal at all!
+*/
+
+static char		**handtet(char **tab)
+{
+	int		i;
+	int		j;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (tab[i][j] == '#')
+				count++;
+			j++;
+		}
+		i++;
+	}
+	if (count == 3)
+	{
+		tab[0][0] = '.';
+		tab[0][1] = '#';
+		tab[0][2] = '#';
+		tab[1][0] = '#';
+		tab[1][1] = '#';
+		tab[1][2] = '.';
 	}
 	return (tab);
 }
@@ -70,6 +104,7 @@ t_tetrimino		*arrange_tet(t_tetrimino *lst)
 	{
 		lst->tetrimino = go_left(lst->x, lst->tetrimino);
 		lst->tetrimino = go_up(lst->y, lst->tetrimino);
+		lst->tetrimino = handtet(lst->tetrimino);
 		lst->y = 0;
 		lst->x = 0;
 		lst->width = get_width(lst->tetrimino);

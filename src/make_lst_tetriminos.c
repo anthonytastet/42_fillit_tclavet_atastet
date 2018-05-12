@@ -43,7 +43,7 @@ static void			fill_xy(t_tetrimino *lst)
 	lst->y = i;
 }
 
-int			get_width(char **tet)
+int					get_width(char **tet)
 {
 	int			width;
 
@@ -54,10 +54,12 @@ int			get_width(char **tet)
 		return (4);
 	if (tet[0][2] == '#' && tet[1][0] == '#')
 		return(3);
+	if (tet[0][1] == '.')
+		return (1);
 	return (width);
 }
 
-int			get_height(char **tet)
+int					get_height(char **tet)
 {
 	int			i;
 	int			j;

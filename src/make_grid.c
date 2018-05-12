@@ -117,7 +117,7 @@ static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 				if (solve_grid(grid, tet->next, size_grid) == 1)
 					return (1);
 				else
-					write_tet(lst, grid, j, i, '.');
+					write_tet(tet, grid, j, i, '.');
 			}
 			j++;
 		}
