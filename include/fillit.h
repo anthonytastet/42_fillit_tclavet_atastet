@@ -43,6 +43,5 @@ char			**make_grid(t_tetrimino *lst, int size_grid);
 t_tetrimino		*arrange_tet(t_tetrimino *lst);
 int				get_width(char **tet);
 int				get_height(char **tet);
-void			write_tet(t_tetrimino *lst, char **grid, int x, int y);
 
 #endif

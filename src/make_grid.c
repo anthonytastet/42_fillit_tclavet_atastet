@@ -45,7 +45,7 @@ static char	**fill_grid_point(char **grid, int size_grid)
  * Writes a tetrimino on a place (x, y) with the good letter associated
 */
 
-void		write_tet(t_tetrimino *lst, char **grid, int x, int y)
+static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
 {
 	int		i;
 	int		j;
@@ -57,7 +57,7 @@ void		write_tet(t_tetrimino *lst, char **grid, int x, int y)
 		while (j < lst->width)
 		{
 			if (lst->tetrimino[i][j] == '#')
-				grid[y + i][x + j] = lst->letter;
+				grid[y + i][x + j] = c;
 			j++;
 		}
 		i++;
@@ -86,7 +86,7 @@ static int	set_tet(t_tetrimino *lst, char **grid, int x, int y)
 		}
 		i++;
 	}
-	write_tet(lst, grid, x, y);
+	write_tet(lst, grid, x, y, lst->letter);
 	return (1);
 }
 
@@ -100,15 +100,24 @@ static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 	tet = lst;
 	if (lst == NULL)
 		return (1);
-	while (i < size_grid)
+	while (i < size_grid - lst->height)
 	{
 		j = 0;
-		while (j < size_grid)
+		dprintf(1, "i : %d\n", i);
+		while (j < size_grid - lst->width)
 		{
+			dprintf(1, "j : %d\n", j);
 			if (set_tet(tet, grid, j, i) == 1)
 			{
+				dprintf(1,"grid 0 %s\n" ,grid[0]);
+				dprintf(1,"grid 1 %s\n" ,grid[1]);
+				dprintf(1,"grid 2 %s\n" ,grid[2]);
+				dprintf(1,"grid 3 %s\n" ,grid[3]);
+				dprintf(1,"grid 4 %s\n\n" ,grid[4]);
 				if (solve_grid(grid, tet->next, size_grid) == 1)
 					return (1);
+				else
+					write_tet(lst, grid, j, i, '.');
 			}
 			j++;
 		}
