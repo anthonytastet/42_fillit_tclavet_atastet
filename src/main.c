@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 		dprintf(1,"lst 4 %s\n\n" ,lst->tetrimino[4]);
 		lst = lst->next;
 	}
-	grid = make_grid(lst, 5);
+	grid = make_grid(lst_start, 5);
 	dprintf(1,"grid 0 %s\n" ,grid[0]);
 	dprintf(1,"grid 1 %s\n" ,grid[1]);
 	dprintf(1,"grid 2 %s\n" ,grid[2]);
