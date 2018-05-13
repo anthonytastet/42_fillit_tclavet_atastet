@@ -67,10 +67,11 @@ int	main(int argc, char **argv)
 		lst = lst->next;
 	}
 	grid = make_grid(lst_start, 5);
-	dprintf(1,"grid 0 %s\n" ,grid[0]);
-	dprintf(1,"grid 1 %s\n" ,grid[1]);
-	dprintf(1,"grid 2 %s\n" ,grid[2]);
-	dprintf(1,"grid 3 %s\n" ,grid[3]);
-	dprintf(1,"grid 4 %s\n" ,grid[4]);
+	i = 0;
+	while (grid[i])
+	{
+		dprintf(1,"grid %d %s\n", i, grid[i]);
+		i++
+;	}
 	return (0);
 }

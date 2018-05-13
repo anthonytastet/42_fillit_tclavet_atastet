@@ -129,12 +129,17 @@ static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 char		**make_grid(t_tetrimino *lst, int size_grid)
 {
 	char		**grid;
+	int			size;
 
-	if ((grid = (char**)malloc(sizeof(char*) * size_grid)) == NULL)
+	size = size_grid;
+	if ((grid = (char**)malloc(sizeof(char*) * size)) == NULL)
 		return (NULL);
 	//lst = arrange_tet(lst);
-	grid = fill_grid_point(grid, size_grid);
-	if (solve_grid(grid, lst, size_grid) == 0)
-		make_grid(lst, size_grid + 1);
+	grid = fill_grid_point(grid, size);
+	while (solve_grid(grid, lst, size) == 0)
+	{
+		size++;
+		grid = fill_grid_point(grid, size);
+	}
 	return (grid);
 }
