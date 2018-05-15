@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/05/08 15:29:05 by atastet          ###   ########.fr        #
+#    Updated: 2018/05/15 11:18:29 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC		=	main.c \
 			second_check.c \
 			make_lst_tetriminos.c \
 			make_grid.c \
-			arrange_tet.c
+			arrange_tet.c \
+			get_size.c
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 

@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:40 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 18:08:01 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 11:53:39 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static t_tetrimino	*new_lst(void)
 	return (lst);
 }
 
-static void			fill_xy(t_tetrimino *lst)
+static void			fill_x(t_tetrimino *lst)
 {
 	int			i;
 	int			j;
@@ -39,49 +39,28 @@ static void			fill_xy(t_tetrimino *lst)
 			i++;
 		}
 	}
-	lst->x = j;
 	lst->y = i;
 }
 
-int					get_width(char **tet)
-{
-	int			width;
-
-	width = 2;
-	if (tet[0][0] == '#' && tet[1][2] == '#')
-		return (3);
-	if (tet[0][3] == '#')
-		return (4);
-	if (tet[0][2] == '#' && tet[1][0] == '#')
-		return(3);
-	if (tet[0][1] == '.')
-		return (1);
-	return (width);
-}
-
-int					get_height(char **tet)
+static void			fill_y(t_tetrimino *lst)
 {
 	int			i;
 	int			j;
-	int			count;
 
-	count = 0;
 	i = 0;
-	while (i < 4)
+	j = 0;
+	while (lst->tetrimino[i][j] == '.')
 	{
-		j = 0;
-		while (j < 4)
+		i++;
+		if (i == 4)
 		{
-			if (tet[i][j] == '#')
-				count++;
-			if (count == 4)
-				return (i + 1);
+			i = 0;
 			j++;
 		}
-		i++;
 	}
-	return (0);
+	lst->x = j;
 }
+
 
 t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 {
@@ -129,7 +108,8 @@ t_tetrimino	*make_lst_tetriminos(char **tab_tet)
 		j = 0;
 		l = 0;
 		i = 0;
-		fill_xy(lst);
+		fill_x(lst);
+		fill_y(lst);
 		lst->next = new_lst();
 		lst = lst->next;
 	}		

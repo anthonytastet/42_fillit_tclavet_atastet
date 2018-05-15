@@ -1,0 +1,337 @@
+lst->x 1
+lst->y 1
+lst->letter A
+lst 0 ....
+lst 1 ..##
+lst 2 .##.
+lst 3 ....
+lst 4 (null)
+
+lst->x 0
+lst->y 1
+lst->letter B
+lst 0 ....
+lst 1 .#..
+lst 2 ##..
+lst 3 .#..
+lst 4 (null)
+
+lst->x 0
+lst->y 1
+lst->letter C
+lst 0 ....
+lst 1 .#..
+lst 2 .#..
+lst 3 ##..
+lst 4 (null)
+
+lst->x 0
+lst->y 1
+lst->letter D
+lst 0 ....
+lst 1 ##..
+lst 2 .##.
+lst 3 ....
+lst 4 (null)
+
+Hello
+Hello
+Hello
+lst->x 0
+lst->y 0
+lst->letter A
+lst->width 3
+lst->height 2
+lst 0 .##.
+lst 1 ##..
+lst 2 ....
+lst 3 ....
+lst 4 (null)
+
+lst->x 0
+lst->y 0
+lst->letter B
+lst->width 2
+lst->height 3
+lst 0 .#..
+lst 1 ##..
+lst 2 .#..
+lst 3 ....
+lst 4 (null)
+
+lst->x 0
+lst->y 0
+lst->letter C
+lst->width 2
+lst->height 3
+lst 0 .#..
+lst 1 .#..
+lst 2 ##..
+lst 3 ....
+lst 4 (null)
+
+lst->x 0
+lst->y 0
+lst->letter D
+lst->width 3
+lst->height 2
+lst 0 ##..
+lst 1 .##.
+lst 2 ....
+lst 3 ....
+lst 4 (null)
+
+i : 0
+j : 0
+grid 0 .AA.
+grid 1 AA..
+grid 2 ....
+grid 3 ....
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+grid 0 .AAB
+grid 1 AABB
+grid 2 ...B
+grid 3 ....
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+grid 0 .AA.
+grid 1 AAB.
+grid 2 .BB.
+grid 3 ..B.
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+j : 2
+grid 0 .AA.
+grid 1 AA.B
+grid 2 ..BB
+grid 3 ...B
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+j : 1
+grid 0 ..AA
+grid 1 .AA.
+grid 2 ....
+grid 3 ....
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+grid 0 ..AA
+grid 1 .AAB
+grid 2 ..BB
+grid 3 ...B
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+grid 0 ....
+grid 1 .AA.
+grid 2 AA..
+grid 3 ....
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+grid 0 ....
+grid 1 .AAB
+grid 2 AABB
+grid 3 ...B
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+j : 1
+grid 0 ....
+grid 1 ..AA
+grid 2 .AA.
+grid 3 ....
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+i : 2
+j : 0
+grid 0 ....
+grid 1 ....
+grid 2 .AA.
+grid 3 AA..
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+grid 0 ...B
+grid 1 ..BB
+grid 2 .AAB
+grid 3 AA..
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+j : 1
+grid 0 ....
+grid 1 ....
+grid 2 ..AA
+grid 3 .AA.
+grid 4 (null)
+
+i : 0
+j : 0
+grid 0 .B..
+grid 1 BB..
+grid 2 .BAA
+grid 3 .AA.
+grid 4 (null)
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+i : 0
+j : 0
+grid 0 .AA..
+grid 1 AA...
+grid 2 .....
+grid 3 .....
+grid 4 .....
+
+i : 0
+j : 0
+j : 1
+j : 2
+grid 0 .AAB.
+grid 1 AABB.
+grid 2 ...B.
+grid 3 .....
+grid 4 .....
+
+i : 0
+j : 0
+j : 1
+j : 2
+j : 3
+i : 1
+j : 0
+j : 1
+j : 2
+j : 3
+grid 0 .AAB.
+grid 1 AABBC
+grid 2 ...BC
+grid 3 ...CC
+grid 4 .....
+
+i : 0
+j : 0
+j : 1
+j : 2
+i : 1
+j : 0
+j : 1
+j : 2
+i : 2
+j : 0
+grid 0 .AAB.
+grid 1 AABBC
+grid 2 DD.BC
+grid 3 .DDCC
+grid 4 .....
+
+i : 0
+j : 0
+grid 0 .AAB.
+grid 1 AABBC
+grid 2 DD.BC
+grid 3 .DDCC
+grid 4 .....
+
+grid 0 .AAB.
+grid 1 AABBC
+grid 2 DD.BC
+grid 3 .DDCC
+grid 4 .....
