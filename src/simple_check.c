@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:29 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 14:21:02 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 17:51:03 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,8 @@ static	int		check_char(char *buf)
 	return (0);
 }
 
-static	int		check_4x4(char *buf)
+static	int		check_4x4(char *buf, int i, int x, int y)
 {
-	int		i;
-	int		y;
-	int		x;
-	int		test;
-
-	x = 0;
-	y = 1;
-	i = 0;
-	test = 0;
 	while (buf[i])
 	{
 		if (buf[i] == '\n' | buf[i] == '\0')
@@ -56,8 +47,8 @@ static	int		check_4x4(char *buf)
 		if (x != 4 && x != 0)
 			return (-1);
 		x = 0;
-		i++;
 		y++;
+		i++;
 	}
 	if (y != 5)
 		return (-1);
@@ -73,7 +64,7 @@ int				simple_check(char *buf)
 		ft_putstr("error");
 		return (-1);
 	}
-	if ((ret = check_4x4(buf)) == -1)
+	if ((ret = check_4x4(buf, 0, 0, 1)) == -1)
 	{
 		ft_putstr("error");
 		return (-1);

@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:40 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 16:56:31 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 17:06:15 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,54 +22,16 @@ static t_tetrimino	*new_lst(void)
 	return (lst);
 }
 
-static void			fill_x(t_tetrimino *lst)
-{
-	int			i;
-	int			j;
-
-	i = 0;
-	j = 0;
-	while (lst->tetrimino[i][j] == '.')
-	{
-		j++;
-		if (j == 4)
-		{
-			j = 0;
-			i++;
-		}
-	}
-	lst->y = i;
-}
-
-static void			fill_y(t_tetrimino *lst)
-{
-	int			i;
-	int			j;
-
-	i = 0;
-	j = 0;
-	while (lst->tetrimino[i][j] == '.')
-	{
-		i++;
-		if (i == 4)
-		{
-			i = 0;
-			j++;
-		}
-	}
-	lst->x = j;
-}
-
-static int			fill_tetriminos(char **tab_tet, int k, int l, t_tetrimino *lst)
+static int			fill_tetriminos(char **tab, int k, int l, t_tetrimino *lst)
 {
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	while (tab_tet[k][l])
+	while (tab[k][l])
 	{
-		if (tab_tet[k][l] == '\n')
+		if (tab[k][l] == '\n')
 		{
 			lst->tetrimino[i][j] = '\0';
 			j = 0;
@@ -78,7 +40,7 @@ static int			fill_tetriminos(char **tab_tet, int k, int l, t_tetrimino *lst)
 			if ((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
 				return (0);
 		}
-		lst->tetrimino[i][j] = tab_tet[k][l];
+		lst->tetrimino[i][j] = tab[k][l];
 		l++;
 		j++;
 	}
@@ -87,14 +49,14 @@ static int			fill_tetriminos(char **tab_tet, int k, int l, t_tetrimino *lst)
 
 static int			end_of_tet(t_tetrimino **lst, int *i, int a)
 {
-		(*lst)->tetrimino[*i] = NULL;
-		a++;
-		fill_x(*lst);
-		fill_y(*lst);
-		(*lst)->next = new_lst();
-		(*lst) = (*lst)->next;
-		*i = 0;
-		return (a);
+	(*lst)->tetrimino[*i] = NULL;
+	a++;
+	fill_x(*lst);
+	fill_y(*lst);
+	(*lst)->next = new_lst();
+	(*lst) = (*lst)->next;
+	*i = 0;
+	return (a);
 }
 
 t_tetrimino			*make_lst_tetriminos(char **tab_tet)
@@ -118,7 +80,7 @@ t_tetrimino			*make_lst_tetriminos(char **tab_tet)
 		lst->letter = a;
 		if ((lst->tetrimino[i] = (char*)malloc(sizeof(char) * 5)) == NULL)
 			return (NULL);
-		i = fill_tetriminos(tab_tet, k , 0, lst);
+		i = fill_tetriminos(tab_tet, k, 0, lst);
 		a = end_of_tet(&lst, &i, a);
 	}
 	lst->next = NULL;

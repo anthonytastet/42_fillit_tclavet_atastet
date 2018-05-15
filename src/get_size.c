@@ -6,12 +6,50 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 11:14:39 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 15:48:43 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 17:03:34 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 #include "../libft/libft.h"
+
+void			fill_x(t_tetrimino *lst)
+{
+	int			i;
+	int			j;
+
+	i = 0;
+	j = 0;
+	while (lst->tetrimino[i][j] == '.')
+	{
+		j++;
+		if (j == 4)
+		{
+			j = 0;
+			i++;
+		}
+	}
+	lst->y = i;
+}
+
+void			fill_y(t_tetrimino *lst)
+{
+	int			i;
+	int			j;
+
+	i = 0;
+	j = 0;
+	while (lst->tetrimino[i][j] == '.')
+	{
+		i++;
+		if (i == 4)
+		{
+			i = 0;
+			j++;
+		}
+	}
+	lst->x = j;
+}
 
 int				get_width(char **tet)
 {

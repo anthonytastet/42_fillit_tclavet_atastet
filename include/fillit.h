@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:39:05 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 14:03:05 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 17:03:15 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ char					**make_grid(t_tetrimino *lst, int size_grid);
 t_tetrimino				*arrange_tet(t_tetrimino *lst);
 int						get_width(char **tet);
 int						get_height(char **tet);
+void					fill_y(t_tetrimino *lst);
+void					fill_x(t_tetrimino *lst);
 
 #endif
