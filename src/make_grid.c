@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 15:30:16 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 18:08:31 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 12:08:42 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,17 +103,17 @@ static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 	while (i < size_grid - lst->height)
 	{
 		j = 0;
-		dprintf(1, "i : %d\n", i);
+		//dprintf(1, "i : %d\n", i);
 		while (j < size_grid - lst->width)
 		{
-			dprintf(1, "j : %d\n", j);
+			//dprintf(1, "j : %d\n", j);
 			if (set_tet(tet, grid, j, i) == 1)
 			{
-				dprintf(1,"grid 0 %s\n" ,grid[0]);
+				/*dprintf(1,"grid 0 %s\n" ,grid[0]);
 				dprintf(1,"grid 1 %s\n" ,grid[1]);
 				dprintf(1,"grid 2 %s\n" ,grid[2]);
 				dprintf(1,"grid 3 %s\n" ,grid[3]);
-				dprintf(1,"grid 4 %s\n\n" ,grid[4]);
+				dprintf(1,"grid 4 %s\n\n" ,grid[4]);*/
 				if (solve_grid(grid, tet->next, size_grid) == 1)
 					return (1);
 				else
@@ -134,7 +134,6 @@ char		**make_grid(t_tetrimino *lst, int size_grid)
 	size = size_grid;
 	if ((grid = (char**)malloc(sizeof(char*) * size)) == NULL)
 		return (NULL);
-	//lst = arrange_tet(lst);
 	grid = fill_grid_point(grid, size);
 	while (solve_grid(grid, lst, size) == 0)
 	{

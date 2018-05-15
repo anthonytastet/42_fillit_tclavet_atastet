@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:29 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 12:29:46 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 12:10:19 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ int		simple_check(char *buf)
 	
 	if((ret = check_char(buf)) == -1)
 	{
-		ft_putstr("ERROR : File must contain only # and .\n");
+		ft_putstr("error");
 		return (-1);
 	}
 	if((ret = check_4x4(buf)) == -1)
 	{
-		ft_putstr("ERROR : File is not in the good format\n");
+		ft_putstr("error");
 		return (-1);
 	}
 	else

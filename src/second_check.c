@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:19 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 10:38:21 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 13:37:28 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,23 @@ static	int	check_onepiece(char *tab_tet)
 	{
 		if (tab_tet[i] == '#')
 		{
-			if (tab_tet[i - 1] == '#' || tab_tet[i + 1] == '#' || tab_tet[i - 5] == '#' || tab_tet[i + 5] == '#')
+			if (tab_tet[i - 1] == '#')
+				test++;
+			if (tab_tet[i + 1] == '#')
+				test++;
+			if (tab_tet[i - 5] == '#')
+				test++;
+			if (tab_tet[i + 5] == '#')
 				test++;
 		}
 		i++;
 	}
-	if (test == 4)
+	if (test == 6 || test == 8)
 		return (0);
 	else
 		return (-1);
 }
+
 static int	check_char(char *tab_tet)
 {
 	int	i;
@@ -71,13 +78,13 @@ int		second_check(char **tab_tet, int nb_tet)
 		error = check_char(tab_tet[j]);
 		if (error == -1)
 		{
-			ft_putstr("ERROR :One of the tetrimino provided does not respect rules ex : 4#\n");
+			ft_putstr("error");
 			return (-1);
 		}
 		error = check_onepiece(tab_tet[j]);
 		if (error == -1)
 		{
-			ft_putstr("ERROR : One of the teriminos is not made of onepiece\n");
+			ft_putstr("error");
 			return (-1);
 		}
 		nb_tet--;

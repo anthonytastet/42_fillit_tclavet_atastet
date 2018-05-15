@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:45 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 10:13:22 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 12:01:47 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	free(tab_tet);
 	lst_start = lst;
 	//DELETE 
-	while (lst->next)
+	/*while (lst->next)
 	{
 		dprintf(1, "lst->x %d\n", lst->x);
 		dprintf(1, "lst->y %d\n", lst->y);
@@ -47,12 +47,10 @@ int	main(int argc, char **argv)
 		dprintf(1,"lst 4 %s\n\n" ,lst->tetrimino[4]);
 		lst = lst->next;
 	}
-	dprintf(1, "Hello\n");
+	dprintf(1, "Hello\n");*/
 	lst = lst_start; //MAYBE NOT USEFULL IF WE DELETE PRINT LST (Need a check)
-	dprintf(1, "Hello\n");
 	lst = arrange_tet(lst);
-	dprintf(1, "Hello\n");
-	while (lst->next)
+	/*while (lst->next)
 	{
 		dprintf(1, "lst->x %d\n", lst->x);
 		dprintf(1, "lst->y %d\n", lst->y);
@@ -65,13 +63,13 @@ int	main(int argc, char **argv)
 		dprintf(1,"lst 3 %s\n" ,lst->tetrimino[3]);
 		dprintf(1,"lst 4 %s\n\n" ,lst->tetrimino[4]);
 		lst = lst->next;
-	}
+	}*/
 	grid = make_grid(lst_start, 5);
 	i = 0;
 	while (grid[i])
 	{
-		dprintf(1,"grid %d %s\n", i, grid[i]);
-		i++
+		ft_putendl(grid[i]);
+		i++;
 ;	}
 	return (0);
 }
