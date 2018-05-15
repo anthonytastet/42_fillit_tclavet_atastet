@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/08 15:30:16 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 17:06:34 by atastet          ###   ########.fr       */
+/*   Created: 2018/05/10 18:14:59 by atastet           #+#    #+#             */
+/*   Updated: 2018/05/15 18:27:28 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../include/fillit.h"
 
 /*
-* Fill the grid with points
+** Fill the grid with points
 */
 
 static char	**fill_grid_point(char **grid, int size_grid)
@@ -42,7 +42,7 @@ static char	**fill_grid_point(char **grid, int size_grid)
 }
 
 /*
-* Writes a tetrimino on a place (x, y) with the good letter associated
+** Writes a tetrimino on a place (x, y) with the good letter associated
 */
 
 static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
@@ -65,8 +65,8 @@ static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
 }
 
 /*
-* Test if a Tetrimino can be placed on the map at a set place (x, y)
-* Writes it on the place if it is possible
+** Test if a Tetrimino can be placed on the map at a set place (x, y)
+** Writes it on the place if it is possible
 */
 
 static int	set_tet(t_tetrimino *lst, char **grid, int x, int y)
@@ -103,23 +103,14 @@ static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 	while (i < size_grid - lst->height)
 	{
 		j = 0;
-		//dprintf(1, "i : %d\n", i);
 		while (j < size_grid - lst->width)
 		{
-			//dprintf(1, "j : %d\n", j);
 			if (set_tet(tet, grid, j, i) == 1)
 			{
-				/*//DELETER
-				dprintf(1,"grid 0 %s\n" ,grid[0]);
-				dprintf(1,"grid 1 %s\n" ,grid[1]);
-				dprintf(1,"grid 2 %s\n" ,grid[2]);
-				dprintf(1,"grid 3 %s\n" ,grid[3]);
-				if (j > 4)
-					dprintf(1,"grid 4 %s\n\n" ,grid[4]);*/
 				if (solve_grid(grid, tet->next, size_grid) == 1)
 					return (1);
-					else
-						write_tet(tet, grid, j, i, '.');
+				else
+					write_tet(tet, grid, j, i, '.');
 			}
 			j++;
 		}

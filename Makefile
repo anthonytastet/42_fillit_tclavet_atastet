@@ -6,7 +6,7 @@
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/05/15 17:57:31 by atastet          ###   ########.fr        #
+#    Updated: 2018/05/15 18:53:40 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,22 +28,21 @@ SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 
 OBJS 		= 	$(SRC:.c=.o)
 
-LIBFT		=	libft/libft.a
-
 CC		=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -I libft/
 
-all :	$(NAME)
+all :		$(NAME)
 
-$(NAME) : $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
+$(NAME) :	$(OBJS)
+	make -C libft
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L libft -lft
 
-$(OBJS) : $(LIBFT)
-	$(CC) $(CFLAGS) -c $(SRC_POS) 
+$(OBJS) :	include/fillit.h
+	$(CC) $(CFLAGS) -c $(SRC_POS)
 
-$(LIBFT) : 
-	make re -C ./libft/
+%.o		: %.c
+	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean : 
 	rm -f $(OBJS)
@@ -55,4 +54,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all re clean fclean	
+.PHONY : all re clean fclean

@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:39:05 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 17:03:15 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 18:49:21 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # define BUF_SIZE 4096
-# include <stdio.h>
 
 typedef struct			s_tetrimino
 {
