@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   arrange_tet.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/15 14:05:39 by atastet           #+#    #+#             */
+/*   Updated: 2018/05/15 14:06:07 by atastet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
-/* 
+/*
 ** Set each tetriminos to the minimum y (up)
 */
 
@@ -26,8 +38,8 @@ static char		**go_up(int i_min, char **tab)
 }
 
 /*
- ** Set each tetriminos to the minimum x possible (left)
- */
+** Set each tetriminos to the minimum x possible (left)
+*/
 
 static char		**go_left(int j_min, char **tab)
 {
@@ -57,7 +69,7 @@ static char		**go_left(int j_min, char **tab)
 }
 
 /*
- * Weird way of getting the good tetrimino back, not ideal at all!
+** Weird way of getting the good tetrimino back, not ideal at all!
 */
 
 static char		**handtet(char **tab)
@@ -92,8 +104,8 @@ static char		**handtet(char **tab)
 }
 
 /*
- ** Arrange each tetriminos left and up;
- */
+** Arrange each tetriminos left and up;
+*/
 
 t_tetrimino		*arrange_tet(t_tetrimino *lst)
 {

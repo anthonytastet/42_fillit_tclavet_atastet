@@ -6,16 +6,16 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:29 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 12:10:19 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 14:21:02 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
-static	int	check_char(char *buf)
+static	int		check_char(char *buf)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (buf[i])
@@ -27,12 +27,12 @@ static	int	check_char(char *buf)
 	return (0);
 }
 
-static	int	check_4x4(char *buf)
+static	int		check_4x4(char *buf)
 {
-	int	i;
-	int	y;
-	int 	x;
-	int	test;
+	int		i;
+	int		y;
+	int		x;
+	int		test;
 
 	x = 0;
 	y = 1;
@@ -59,21 +59,21 @@ static	int	check_4x4(char *buf)
 		i++;
 		y++;
 	}
-		if (y != 5)
-			return (-1);
+	if (y != 5)
+		return (-1);
 	return (0);
 }
 
-int		simple_check(char *buf)
+int				simple_check(char *buf)
 {
-	int	ret;
-	
-	if((ret = check_char(buf)) == -1)
+	int		ret;
+
+	if ((ret = check_char(buf)) == -1)
 	{
 		ft_putstr("error");
 		return (-1);
 	}
-	if((ret = check_4x4(buf)) == -1)
+	if ((ret = check_4x4(buf)) == -1)
 	{
 		ft_putstr("error");
 		return (-1);

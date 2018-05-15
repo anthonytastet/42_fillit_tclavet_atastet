@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:42 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 15:17:25 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 14:18:10 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 static char		**str_to_tab(char *buf, char **tab_tet, int nb_tet)
 {
-	int	i;
-	int	x;
-	int	y;
-	
+	int		i;
+	int		x;
+	int		y;
+
 	i = 0;
 	y = 0;
 	x = 0;
 	while (y < nb_tet)
 	{
-		if ((tab_tet[y] = (char*)malloc(sizeof(char) * (20 + 1))) ==  NULL)
+		if ((tab_tet[y] = (char*)malloc(sizeof(char) * (20 + 1))) == NULL)
 			return (NULL);
 		while (x < 20)
 		{
@@ -41,10 +41,10 @@ static char		**str_to_tab(char *buf, char **tab_tet, int nb_tet)
 	return (tab_tet);
 }
 
-static int	get_nb_tetriminos(char *buf)
+static int		get_nb_tetriminos(char *buf)
 {
-	int	nb_tet;
-	int	i;
+	int		nb_tet;
+	int		i;
 
 	i = 0;
 	nb_tet = 0;
@@ -57,23 +57,23 @@ static int	get_nb_tetriminos(char *buf)
 	return (nb_tet);
 }
 
-char		**read_tetriminos(char *argv)
+char			**read_tetriminos(char *argv)
 {
 	char	buf[BUF_SIZE + 1];
 	char	**tab_tet;
-	int	ret;
-	int	fd;
-	int	nb_tet;
+	int		ret;
+	int		fd;
+	int		nb_tet;
 
 	ret = 1;
 	if ((fd = open(argv, O_RDONLY)) == -1)
 		ft_putstr("open() failed\n");
-	while((ret = read(fd, buf, BUF_SIZE)) != 0)
+	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
 		buf[ret] = '\0';
 	if ((simple_check(buf)) == -1)
 		return (NULL);
 	nb_tet = get_nb_tetriminos(buf);
-	if ((tab_tet = (char**)malloc(sizeof(char*) * (nb_tet + 1)))==NULL)
+	if ((tab_tet = (char**)malloc(sizeof(char*) * (nb_tet + 1))) == NULL)
 		return (NULL);
 	tab_tet = str_to_tab(buf, tab_tet, nb_tet);
 	if ((second_check(tab_tet, nb_tet)) == -1)

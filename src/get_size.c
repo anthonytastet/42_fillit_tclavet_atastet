@@ -6,30 +6,36 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 11:14:39 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 11:19:59 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 15:34:53 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 #include "../libft/libft.h"
 
-int					get_width(char **tet)
+int				get_width(char **tet)
 {
+	int			x;
+	int			y;
 	int			width;
-
-	width = 2;
-	if (tet[0][0] == '#' && tet[1][2] == '#')
-		return (3);
-	if (tet[0][3] == '#')
-		return (4);
-	if (tet[0][2] == '#' && tet[1][0] == '#')
-		return(3);
-	if (tet[0][1] == '.')
-		return (1);
+	x = 0;
+	y = 0;
+	width = 0;
+	while (y < 4)
+	{
+		while (x < 4)
+		{
+			if (tet[y][x] == '#' &&  (x + 1) > width)
+				width = x + 1;
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 	return (width);
 }
 
-int					get_height(char **tet)
+int				get_height(char **tet)
 {
 	int			i;
 	int			j;

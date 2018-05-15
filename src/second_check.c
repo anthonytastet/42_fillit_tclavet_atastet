@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:19 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 13:37:28 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 14:19:22 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 static	int	check_onepiece(char *tab_tet)
 {
-	int	i;
-	int	test;
+	int		i;
+	int		test;
 
 	i = 0;
 	test = 0;
@@ -43,11 +43,11 @@ static	int	check_onepiece(char *tab_tet)
 
 static int	check_char(char *tab_tet)
 {
-	int	i;
-	int	nb_hash;
-	int	nb_dot;
-	int	nb_n;
-	 
+	int		i;
+	int		nb_hash;
+	int		nb_dot;
+	int		nb_n;
+
 	i = 0;
 	nb_hash = 0;
 	nb_dot = 0;
@@ -67,11 +67,11 @@ static int	check_char(char *tab_tet)
 	return (0);
 }
 
-int		second_check(char **tab_tet, int nb_tet)
+int			second_check(char **tab_tet, int nb_tet)
 {
-	int j;
-	int error;
-	
+	int		j;
+	int		error;
+
 	j = 0;
 	while (nb_tet > 0)
 	{
