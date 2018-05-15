@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 11:14:39 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 15:34:53 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 15:48:43 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int				get_width(char **tet)
 	int			x;
 	int			y;
 	int			width;
+
 	x = 0;
 	y = 0;
 	width = 0;
@@ -25,7 +26,7 @@ int				get_width(char **tet)
 	{
 		while (x < 4)
 		{
-			if (tet[y][x] == '#' &&  (x + 1) > width)
+			if (tet[y][x] == '#' && (x + 1) > width)
 				width = x + 1;
 			x++;
 		}

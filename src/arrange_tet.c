@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 14:05:39 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 14:06:07 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 15:43:26 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,16 @@ static char		**handtet(char **tab)
 	int		j;
 	int		count;
 
-	i = 0;
+	i = -1;
 	count = 0;
-	while (i < 4)
+	while (++i < 4)
 	{
-		j = 0;
-		while (j < 4)
+		j = -1;
+		while (++j < 4)
 		{
 			if (tab[i][j] == '#')
 				count++;
-			j++;
 		}
-		i++;
 	}
 	if (count == 3)
 	{

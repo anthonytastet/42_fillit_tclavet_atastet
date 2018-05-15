@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 15:30:16 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 15:27:01 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 15:57:15 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../include/fillit.h"
 
 /*
- * Fill the grid with points
+* Fill the grid with points
 */
 
 static char	**fill_grid_point(char **grid, int size_grid)
@@ -42,7 +42,7 @@ static char	**fill_grid_point(char **grid, int size_grid)
 }
 
 /*
- * Writes a tetrimino on a place (x, y) with the good letter associated
+* Writes a tetrimino on a place (x, y) with the good letter associated
 */
 
 static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
@@ -65,8 +65,8 @@ static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
 }
 
 /*
- * Test if a Tetrimino can be placed on the map at a set place (x, y)
- * Writes it on the place if it is possible
+* Test if a Tetrimino can be placed on the map at a set place (x, y)
+* Writes it on the place if it is possible
 */
 
 static int	set_tet(t_tetrimino *lst, char **grid, int x, int y)

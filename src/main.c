@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:45 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 15:22:35 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/15 15:46:06 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	main(int argc, char **argv)
 	//int j;
 	//j = 0;
 	lst = make_lst_tetriminos(tab_tet);
-	free(tab_tet);
 	lst_start = lst;
+	free(tab_tet);
 	//DELETE 
 	/*while (lst->next)
 	  {
@@ -64,7 +64,6 @@ int	main(int argc, char **argv)
 	  lst = lst->next;
 	  }*/
 	grid = make_grid(lst_start, 3);
-	i = 0;
 	while (grid[i])
 	{
 		ft_putendl(grid[i]);
