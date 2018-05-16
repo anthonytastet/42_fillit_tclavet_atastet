@@ -45,7 +45,7 @@ static char	**fill_grid_point(char **grid, int size_grid)
 ** Writes a tetrimino on a place (x, y) with the good letter associated
 */
 
-static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
+static void	write_tet(t_tetrimino *lst, char **grid, int x, int y)
 {
 	int		i;
 	int		j;
@@ -57,7 +57,26 @@ static void	write_tet(t_tetrimino *lst, char **grid, int x, int y, char c)
 		while (j < lst->width)
 		{
 			if (lst->tetrimino[i][j] == '#')
-				grid[y + i][x + j] = c;
+				grid[y + i][x + j] = lst->letter;
+			j++;
+		}
+		i++;
+	}
+}
+
+static void	write_point(t_tetrimino *lst, char **grid, int x, int y)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < lst->height)
+	{
+		j = 0;
+		while (j < lst->width)
+		{
+			if (lst->tetrimino[i][j] == '#')
+				grid[y + i][x + j] = '.';
 			j++;
 		}
 		i++;
@@ -86,7 +105,7 @@ static int	set_tet(t_tetrimino *lst, char **grid, int x, int y)
 		}
 		i++;
 	}
-	write_tet(lst, grid, x, y, lst->letter);
+	write_tet(lst, grid, x, y);
 	return (1);
 }
 
@@ -110,7 +129,7 @@ static int	solve_grid(char **grid, t_tetrimino *lst, int size_grid)
 				if (solve_grid(grid, tet->next, size_grid) == 1)
 					return (1);
 				else
-					write_tet(tet, grid, j, i, '.');
+					write_point(tet, grid, j, i);
 			}
 			j++;
 		}
