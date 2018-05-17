@@ -44,5 +44,7 @@ int						get_width(char **tet);
 int						get_height(char **tet);
 void					fill_y(t_tetrimino *lst);
 void					fill_x(t_tetrimino *lst);
+void					free_lst(t_tetrimino *lst);
+void					free_grid(char **grid);
 
 #endif

@@ -32,10 +32,13 @@ int				main(int argc, char **argv)
 	lst = make_lst_tetriminos(tab_tet);
 	lst_start = lst;
 	free(tab_tet);
-	lst = lst_start;
 	lst = arrange_tet(lst);
-	grid = make_grid(lst_start, 3);
+	lst = lst_start;
+	grid = make_grid(lst, 3);
+	free_lst(lst_start);
 	while (grid[++i])
 		ft_putendl(grid[i]);
+	free_grid(grid);
+	while (1);
 	return (0);
 }

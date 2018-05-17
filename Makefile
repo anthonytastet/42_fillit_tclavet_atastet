@@ -22,7 +22,8 @@ SRC		=	main.c \
 			make_lst_tetriminos.c \
 			make_grid.c \
 			arrange_tet.c \
-			get_size.c
+			get_size.c \
+			free_lst.c
 
 SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
 
