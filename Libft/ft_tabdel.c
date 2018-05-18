@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_tabdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 10:27:34 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 10:27:37 by atastet          ###   ########.fr       */
-/*   Updated: 2018/05/15 10:35:08 by atastet          ###   ########.fr       */
+/*   Created: 2018/05/18 13:27:39 by atastet           #+#    #+#             */
+/*   Updated: 2018/05/18 13:30:35 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_puttab(char **tab)
+void	ft_tabdel(char ***tab)
 {
-	int i;
+	size_t	i;
+	char	**erase;
 
+	erase = NULL;
+	if (!tab || !*tab)
+		return ;
 	i = 0;
-	while (tab[i] != NULL)
+	erase = *tab;
+	while (erase[i])
 	{
-		ft_putstr(tab[i]);
-		ft_putchar('\n');
+		ft_strdel(&erase[i]);
 		i++;
 	}
+	free(*tab);
+	*tab = NULL;
 }
+
