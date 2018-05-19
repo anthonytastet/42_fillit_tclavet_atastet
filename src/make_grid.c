@@ -6,40 +6,12 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 18:14:59 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 18:27:28 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/19 16:19:36 by tclavet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../include/fillit.h"
-
-/*
-** Fill the grid with points
-*/
-
-static char	**fill_grid_point(char **grid, int size_grid)
-{
-	int		i;
-	int		j;
-
-	j = 0;
-	i = 0;
-	while (i < size_grid - 1)
-	{
-		if ((grid[i] = (char*)malloc(sizeof(char) * size_grid)) == NULL)
-			return (NULL);
-		while (j < size_grid - 1)
-		{
-			grid[i][j] = '.';
-			j++;
-		}
-		grid[i][j] = '\0';
-		i++;
-		j = 0;
-	}
-	grid[i] = NULL;
-	return (grid);
-}
 
 /*
 ** Writes a tetrimino on a place (x, y) with the good letter associated
