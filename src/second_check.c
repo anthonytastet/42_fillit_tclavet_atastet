@@ -6,11 +6,10 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:19 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 14:19:22 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 14:04:28 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 static	int	check_onepiece(char *tab_tet)
