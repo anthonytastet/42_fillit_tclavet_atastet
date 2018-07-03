@@ -6,10 +6,11 @@
 /*   By: tclavet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 16:17:33 by tclavet           #+#    #+#             */
-/*   Updated: 2018/07/03 14:04:40 by atastet          ###   ########.fr       */
+/*   Updated: 2018/05/19 16:20:12 by tclavet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 char	**fill_grid_point(char **grid, int size_grid)
