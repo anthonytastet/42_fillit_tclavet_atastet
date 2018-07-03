@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:42 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 14:18:10 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 14:35:32 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ char			**read_tetriminos(char *argv)
 
 	ret = 1;
 	if ((fd = open(argv, O_RDONLY)) == -1)
+	{
 		ft_putstr("open() failed\n");
+		return (NULL);
+	}
 	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
 		buf[ret] = '\0';
 	if ((simple_check(buf)) == -1)
