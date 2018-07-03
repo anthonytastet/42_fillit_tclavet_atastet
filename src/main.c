@@ -6,11 +6,10 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:45 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/24 10:28:47 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 20:18:01 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 int				main(int argc, char **argv)
