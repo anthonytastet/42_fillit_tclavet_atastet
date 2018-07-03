@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:19 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 14:19:22 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 20:02:28 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,13 @@ int			second_check(char **tab_tet, int nb_tet)
 		error = check_char(tab_tet[j]);
 		if (error == -1)
 		{
-			ft_putstr("error");
+			ft_putstr("error\n");
 			return (-1);
 		}
 		error = check_onepiece(tab_tet[j]);
 		if (error == -1)
 		{
-			ft_putstr("error");
+			ft_putstr("error\n");
 			return (-1);
 		}
 		nb_tet--;
