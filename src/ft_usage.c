@@ -6,11 +6,10 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:07 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/08 10:38:09 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 14:04:43 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 void	ft_usage(void)

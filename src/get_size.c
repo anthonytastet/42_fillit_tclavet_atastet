@@ -6,12 +6,11 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 11:14:39 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 17:03:34 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 14:04:47 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
-#include "../libft/libft.h"
 
 void			fill_x(t_tetrimino *lst)
 {

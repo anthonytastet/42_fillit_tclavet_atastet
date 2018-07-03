@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/08 10:38:29 by atastet           #+#    #+#             */
-/*   Updated: 2018/07/03 20:02:46 by atastet          ###   ########.fr       */
+/*   Created: 2018/07/03 20:06:17 by atastet           #+#    #+#             */
+/*   Updated: 2018/07/03 20:06:20 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 static	int		check_char(char *buf)

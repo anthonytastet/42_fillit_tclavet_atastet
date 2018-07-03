@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/08 10:38:19 by atastet           #+#    #+#             */
-/*   Updated: 2018/07/03 20:02:28 by atastet          ###   ########.fr       */
+/*   Created: 2018/07/03 20:06:36 by atastet           #+#    #+#             */
+/*   Updated: 2018/07/03 20:06:46 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 static	int	check_onepiece(char *tab_tet)

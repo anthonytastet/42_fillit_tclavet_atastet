@@ -6,12 +6,15 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:37:42 by atastet           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/07/03 20:03:01 by atastet          ###   ########.fr       */
+=======
+/*   Updated: 2018/07/03 14:04:26 by atastet          ###   ########.fr       */
+>>>>>>> f2155f095334f7d31afb597463fb4bd6dcaa80b7
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
-#include "../libft/libft.h"
 
 static char		**str_to_tab(char *buf, char **tab_tet, int nb_tet)
 {
