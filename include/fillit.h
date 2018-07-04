@@ -6,7 +6,7 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 15:10:01 by atastet           #+#    #+#             */
-/*   Updated: 2018/07/04 15:10:03 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/04 15:15:40 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include "../libft/libft.h"
+# include "../Libft/libft.h"
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
