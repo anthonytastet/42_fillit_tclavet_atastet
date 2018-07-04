@@ -6,11 +6,10 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:40 by atastet           #+#    #+#             */
-/*   Updated: 2018/05/15 17:06:15 by atastet          ###   ########.fr       */
+/*   Updated: 2018/07/03 20:18:04 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 static t_tetrimino	*new_lst(void)

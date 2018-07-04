@@ -6,11 +6,14 @@
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/08 10:38:29 by atastet           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/07/04 14:59:27 by atastet          ###   ########.fr       */
+=======
+/*   Updated: 2018/07/03 20:19:53 by atastet          ###   ########.fr       */
+>>>>>>> 7a25b2e4d6eb0c00d274fde4ba07d00ff8a47b28
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../include/fillit.h"
 
 static	int		check_char(char *buf)
