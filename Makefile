@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: atastet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/04/10 10:37:46 by atastet           #+#    #+#              #
-#    Updated: 2018/07/03 13:54:44 by atastet          ###   ########.fr        #
+#    Created: 2018/07/04 15:00:29 by atastet           #+#    #+#              #
+#    Updated: 2018/07/04 15:04:23 by atastet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= 	fillit
+NAME	=	fillit
 
 SRC_PATH	=	src/
 
@@ -25,34 +25,31 @@ SRC		=	main.c \
 			get_size.c \
 			fill_grid.c
 
-SRC_POS		= 	$(addprefix $(SRC_PATH),$(SRC))
+SRC_POS		= $(addprefix $(SRC_PATH),$(SRC))
 
-OBJS 		= 	$(SRC:.c=.o)
+OBJS	=	$(SRC_POS:.c=.o)
 
 CC		=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror -I libft/
+CFLAGS	=	-Wall -Wextra -Werror -I./libft/ -I./
 
-all :		$(NAME)
+all		:	$(NAME)
 
-$(NAME) :	$(OBJS)
-	make -C libft
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L libft -lft
+$(NAME)	:	$(OBJS)
+			make -C libft
+			$(CC) $(CFLAGS) $(OBJS) -L libft -lft -o $(NAME)
 
-$(OBJS) :	include/fillit.h
-	$(CC) $(CFLAGS) -c $(SRC_POS)
+%.o		:	$(SRC_PATH)%.c
+			$(CC) -o $@ -c $< $(CFLAGS)
 
-%.o		: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+clean	:
+			rm -rf $(OBJS)
+			make clean -C libft
 
-clean : 
-	rm -f $(OBJS)
-	make clean -C ./libft/
+fclean	:
+			rm -rf $(OBJS) $(NAME)
+			make fclean -C libft
 
-fclean : clean
-	rm -f $(NAME)
-	make fclean -C ./libft/
+re		:	fclean all
 
-re : fclean all
-
-.PHONY : all re clean fclean
+.PHONY	:	all clean fclean re
