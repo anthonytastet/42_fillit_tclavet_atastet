@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atastet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/08 10:39:05 by atastet           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2018/07/03 20:15:13 by atastet          ###   ########.fr       */
-=======
-/*   Updated: 2018/07/03 20:17:03 by atastet          ###   ########.fr       */
->>>>>>> 7a25b2e4d6eb0c00d274fde4ba07d00ff8a47b28
+/*   Created: 2018/07/04 15:10:01 by atastet           #+#    #+#             */
+/*   Updated: 2018/07/04 15:10:03 by atastet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include "../Libft/libft.h"
+# include "../libft/libft.h"
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
